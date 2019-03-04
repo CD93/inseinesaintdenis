@@ -231,7 +231,7 @@ header {
                 &.menu-item--inssd {
                     .menu-item__picto {
                         &:before {
-                            @include svgicon('img/common/picto-head-inssd.svg', 40px, 40px);
+                            @include svgicon('img/common/picto-madein.svg', 40px, 40px);
                         }
                     }
                 }
