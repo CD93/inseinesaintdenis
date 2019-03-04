@@ -1,0 +1,124 @@
+.pagination {
+    text-align: center;
+    margin-top: 40px;
+
+    @media (min-width: $screen-sm-min) {
+    }
+    @media (min-width: $screen-md-min) {
+    }
+    @media (min-width: $screen-lg-min) {
+    }
+}
+
+.pagination__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+        margin-right: 16px;
+
+        @media (min-width: $screen-sm-min) {
+            margin-right: 21px;
+        }
+        @media (min-width: $screen-md-min) {
+            margin-right: 20px;
+        }
+        @media (min-width: $screen-lg-min) {
+        }
+    }
+}
+
+.pagination__link {
+    vertical-align: top;
+    line-height: 20px;
+    font-size: 1.1rem;
+    color: #000;
+
+    &--number {
+        color: #000;
+        background-color: #fff;
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+        border: 1px solid #000;
+        display: block;
+
+        &:hover, &:active, &:focus {
+            background-color: #000;
+            border: 1px solid #000;
+        }
+
+        &.pagination__link--current {
+            position: relative;
+            font-weight: 500;
+            color: #fff;
+            background-color: #000;
+            border: 1px solid #000;
+        }
+    }
+
+    @media (min-width: $screen-sm-min) {
+    }
+    @media (min-width: $screen-md-min) {
+        line-height: 28px;
+        font-size: 1.5rem;
+
+        &--number {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    @media (min-width: $screen-lg-min) {
+    }
+
+    &--prev {
+        &:before {
+            content: "<";
+            position: relative;
+            display: block;
+            font-size: 1.5rem;
+            color: #000;
+        }
+    }
+
+    &--next {
+        &:before {
+            content: ">";
+            position: relative;
+            display: block;
+            font-size: 1.5rem;
+            color: #000;
+        }
+    }
+
+    &--start {
+        &:before {
+            content: "<<";
+            position: relative;
+            display: block;
+            font-size: 1.5rem;
+            color: #000;
+        }
+    }
+
+    &--end {
+        &:before {
+            content: ">>";
+            position: relative;
+            display: block;
+            font-size: 1.5rem;
+            color: #000;
+        }
+    }
+
+    span {
+        display: none;
+
+        @media (min-width: $screen-sm-min) {
+        }
+        @media (min-width: $screen-md-min) {
+            display: block;
+        }
+        @media (min-width: $screen-lg-min) {
+        }
+    }
+}

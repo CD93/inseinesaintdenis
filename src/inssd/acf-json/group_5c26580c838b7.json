@@ -1,0 +1,79 @@
+{
+    "key": "group_5c26580c838b7",
+    "title": "Options : Page d'accueil",
+    "fields": [
+        {
+            "key": "field_58ebab9f36b04",
+            "label": "Article à la une",
+            "name": "params_home_featured_post",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "post"
+            ],
+            "taxonomy": [
+                "category:actuality",
+                "category:ambassadeurs",
+                "category:articles",
+                "category:page",
+                "category:portraits",
+                "category:revue-de-presse",
+                "category:uncategorized"
+            ],
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": "",
+            "max": 1,
+            "return_format": "id"
+        },
+        {
+            "key": "field_5c299c1950877",
+            "label": "Introduction (événement)",
+            "name": "params_home_event_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-parametres"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1548026025
+}

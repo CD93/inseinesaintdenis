@@ -1,0 +1,233 @@
+{
+    "key": "group_5c26580b5f7f8",
+    "title": "Information sur l'événement",
+    "fields": [
+        {
+            "key": "field_5c28f8a640509",
+            "label": "Coordonées GPS",
+            "name": "gps_event",
+            "type": "group",
+            "instructions": "Pour obtenir les coordonnées d'une adresse : https:\/\/www.coordonnees-gps.fr",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5c28f8cd4050a",
+                    "label": "Latitude",
+                    "name": "latitude",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": 0,
+                    "max": "",
+                    "step": ""
+                },
+                {
+                    "key": "field_5c28f91e4050b",
+                    "label": "Longitude",
+                    "name": "longitude",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": 0,
+                    "max": "",
+                    "step": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5802bf41f837e",
+            "label": "Adresse",
+            "name": "place_event",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c3b3bd7f33fc",
+            "label": "Ville",
+            "name": "city_event",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5802ce2ed97d7",
+            "label": "Date de début",
+            "name": "start_date",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y G:i",
+            "return_format": "Y-m-d H:i:s",
+            "first_day": 1
+        },
+        {
+            "key": "field_5802ce40d97d8",
+            "label": "Date de fin",
+            "name": "end_date",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y G:i",
+            "return_format": "Y-m-d H:i:s",
+            "first_day": 1
+        },
+        {
+            "key": "field_5802be26b3883",
+            "label": "Nom du requérant",
+            "name": "nom_event",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5802bee6f837b",
+            "label": "Prénom du requérant",
+            "name": "prenom_event",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5802bf15f837c",
+            "label": "Télèphone",
+            "name": "tel_event",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5802bf2bf837d",
+            "label": "Email",
+            "name": "mail_event",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "tribe_events"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1548502054
+}

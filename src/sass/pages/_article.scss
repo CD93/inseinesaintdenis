@@ -1,0 +1,15 @@
+.article-infos__category {
+    background-color: $blue;
+    padding: 0 5px;
+    display: inline-block;
+    @include font-caveat(400, 2rem, 2.4rem);
+    color: #fff;
+    margin-right: 10px;
+    padding: .1rem 10px .3rem;
+}
+
+.article-infos__date {
+    @include font-open(400, 1.4rem, 2.7remrem);
+    color: $blue;
+    display: inline-block;
+}

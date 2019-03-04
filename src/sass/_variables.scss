@@ -1,0 +1,53 @@
+//
+// mixin for bullet proof font declaration syntax
+//
+@mixin declare-font-face($font-family, $font-filename, $font-weight : normal, $font-style :normal, $font-stretch : normal){
+    @font-face{
+        font-family: '#{$font-family}';
+        src: url(#{$font-filename}.woff2) format('woff2'),
+             url(#{$font-filename}.woff) format('woff');
+        font-weight: $font-weight;
+        font-style: $font-style;
+        font-stretch: $font-stretch;
+    }
+}
+
+@include declare-font-face('FontName', 'fonts/font-filename', 400);
+
+$pink: #D8127D;
+$yellow: #FFF101;
+$blue: #005BAA;
+$white: #fff;
+$black: #000;
+
+$basecolor: $white;
+$selection: $blue;
+$linkcolor: $pink;
+$blacktext: $black;
+$greytext: #4A4A4A;
+$fb: #005BAA;
+$tw: #1EA1F1;
+
+@mixin blue-bg() {
+    background-color: $blue;
+}
+
+@mixin yellow-bg() {
+    background-color: $yellow;
+}
+
+@mixin pink-bg() {
+    background-color: $pink;
+}
+
+.blue-bg {
+    @include blue-bg();
+}
+
+.yellow-bg {
+    @include yellow-bg();
+}
+
+.pink-bg {
+    @include pink-bg();
+}

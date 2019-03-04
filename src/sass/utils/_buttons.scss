@@ -1,0 +1,66 @@
+button {
+    padding:0;
+    background-color:transparent;
+    border:0;
+    -webkit-appearance:none;
+}
+
+.link {
+    display: inline-block;
+    @include text();
+    text-decoration: underline;
+    @include transition(color .2s linear);
+
+    &:hover {
+        color: $linkcolor;
+    }
+}
+
+.btn {
+    @include font-open(600, 1.4rem, 2.125rem);
+    padding: 8px 14px;
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    text-align: center;
+    @include transition(color .3s linear, background-color .3s linear);
+
+    &:hover {
+        background-color: $linkcolor;
+        color: #fff;
+    }
+
+    &.btn--black {
+        background-color: $black;
+        color: #fff;
+    }
+
+    &.btn--blue {
+        background-color: $blue;
+        color: #fff;
+
+        &:hover {
+            background-color: darken($blue, 10%);
+            color: #fff;
+        }
+    }
+
+    &.btn--pink {
+        background-color: $pink;
+
+        &:hover {
+            background-color: darken($pink, 10%);
+            color: #fff;
+        }
+    }
+
+    &.btn--round {
+        font-weight: 700;
+        @include border-radius(5px);
+    }
+
+}
+

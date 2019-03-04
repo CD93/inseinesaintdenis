@@ -1,0 +1,76 @@
+/*!
+Theme Name: In Seine Saint-Denis
+Text Domain: inssd
+Utile à Wordpress pour les traductions
+*/
+
+// Classes génériques de WordPress
+@import 'wordpress';
+
+@import 'vendor/datepicker';
+
+@import 'bootstrap/variables';
+@import 'variables';
+@import 'functions';
+@import 'reset';
+
+// Bootstrap
+@import 'bootstrap/mixins/background-variant';
+@import 'bootstrap/mixins/center-block';
+@import 'bootstrap/mixins/clearfix';
+@import 'bootstrap/mixins/hide-text';
+@import 'bootstrap/mixins/image';
+@import 'bootstrap/mixins/vendor-prefixes';
+@import 'bootstrap/mixins/tab-focus';
+@import 'bootstrap/mixins/grid-framework';
+@import 'bootstrap/mixins/grid';
+@import 'bootstrap/mixins/responsive-visibility';
+@import 'bootstrap/mixins/text-emphasis';
+@import 'bootstrap/mixins/text-overflow';
+@import 'bootstrap/grid';
+@import 'bootstrap/utilities';
+@import 'bootstrap/responsive-utilities';
+@import 'bootstrap/scaffolding';
+@import 'bootstrap/type';
+
+@import 'sprite';
+@include retina-sprites($retina-groups);
+@import 'utilities';
+@import 'main';
+@import 'media';
+
+@import 'fontawesome/fontawesome.scss';
+@import 'fontawesome/brands';
+@import 'fontawesome/regular';
+@import 'fontawesome/solid';
+
+@import 'utils/flex';
+@import 'utils/common';
+@import 'utils/structure';
+@import 'utils/text';
+@import 'utils/buttons';
+@import 'utils/positionning';
+@import 'utils/form';
+
+@import 'components/block';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/news';
+@import 'components/events';
+@import 'components/sidebar';
+@import 'components/heading';
+@import 'components/datepicker';
+@import 'components/pagination';
+@import 'components/spinner';
+@import 'components/burger';
+
+@import 'pages/home';
+@import 'pages/article';
+@import 'pages/event';
+@import 'pages/events';
+@import 'pages/project';
+@import 'pages/projects';
+@import 'pages/ambassador';
+@import 'pages/ambassadors';
+@import 'pages/become-ambassador';
+@import 'pages/search';

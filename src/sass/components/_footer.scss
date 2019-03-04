@@ -1,0 +1,116 @@
+footer {
+    background-color: #000;
+    padding: 30px 0 40px;
+    text-align: center;
+
+    .footer__logo {
+        position: relative;
+        @include size(103px, 90px);
+        margin: 0 auto 20px;
+
+        .footer_logo--link{
+            display: block;
+            @include svgicon('img/common/logo-inssd.svg', 103px, 90px);
+        }
+    }
+
+    .footer__actions {
+        @include flex;
+        @include flex--column;
+        @include flex--justify-content-justify;
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    .footer__list {
+        &:last-child {
+            border: none;
+
+            ul {
+                border: none;
+            }
+        }
+
+        ul {
+            display: inline-block;
+            @extend .clearfix;
+            border-bottom: 1px solid #fff;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+
+            .menu-item {
+                width: 100%;
+                padding-right: 10px;
+                margin: 8px 0;
+
+                a {
+                    color: #fff;
+                    @include font-open(400, 1.4rem, 1.5);
+                }
+            }
+        }
+
+        .copyright {
+            text-align: center;
+            color: #fff;
+            @include font-open(400, 1.2rem, 1.5);
+        }
+    }
+
+    .footer__text {
+        width: 60%;
+        margin: 50px auto 0;
+
+        p{
+            font-weight: 400;
+            text-align: center;
+            color: #fff;
+        }
+    }
+
+    @media (min-width: $screen-xs-min){
+    }
+
+    @media (min-width: $screen-sm-min){
+        text-align: left;
+
+        .footer__logo {
+            @include size(125px, 144px);
+            margin: 0 auto 40px;
+
+            .footer_logo--link{
+                @include svgicon('img/common/logo-inssd.svg', 125px, 144px);
+            }
+        }
+
+        .footer__actions {
+            width: 100%;
+            @include flex;
+            @include flex--row;
+            @include flex--justify-content-justify;
+        }
+
+        .footer__list {
+            border-right: 1px solid #fff;
+            padding-left: 48px;
+            padding-right: 48px;
+
+            ul {
+                border-bottom: none;
+            }
+
+            .copyright {
+                text-align: left;
+            }
+        }
+    }
+
+    @media (min-width: $screen-md-min){
+        .footer__actions {
+            width: 60%;
+        }
+    }
+
+    @media (min-width: $screen-lg-min){
+    }
+}

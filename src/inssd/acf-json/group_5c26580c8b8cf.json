@@ -1,0 +1,67 @@
+{
+    "key": "group_5c26580c8b8cf",
+    "title": "Options : Annuaire ambassadeurs",
+    "fields": [
+        {
+            "key": "field_58f2af21c280a",
+            "label": "Classement aléatoire :",
+            "name": "params_archive_ambassadors_random_sort",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "oui": "oui",
+                "non": "non"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5c29c9ff64e68",
+            "label": "Introduction",
+            "name": "params_archive_ambassadors_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-parametres"
+            }
+        ]
+    ],
+    "menu_order": 3,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1548026060
+}

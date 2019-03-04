@@ -1,0 +1,74 @@
+.back-btn,
+.nav-toggle {
+    @include size(36px, 34px);
+    position: absolute;
+    z-index: 9999;
+    display: block;
+    top: 15px;
+    left: 15px;
+    padding:0;
+    background-color:transparent;
+    border:0;
+    -webkit-appearance:none;
+
+    @media (min-width: $screen-xs-min){
+    }
+
+    @media (min-width: $screen-sm-min){
+    }
+
+    @media (min-width: $screen-md-min){
+        display: none;
+    }
+
+    @media (min-width: $screen-lg-min){
+    }
+
+    .nav-toggle--icon-wrapper  {
+        @include absolute-center(y);
+        left: 0;
+        cursor: pointer;
+        @include size(20px, 16px);
+        padding-top: 7px;
+
+        .nav-toggle--icon:after,
+        .nav-toggle--icon:before,
+        .nav-toggle--icon {
+            content: '';
+            cursor: pointer;
+            height: 6px;
+            width: 35px;
+            background: $black;
+            @include border-radius(3px);
+            position: absolute;
+            display: block;
+            transition: all .3s ease-in-out;
+        }
+
+        .nav-toggle--icon {
+            &:before {
+                top: -12px;
+            }
+
+            &:after {
+                bottom: -12px;
+            }
+        }
+
+        header.menu-open & {
+            .nav-toggle--icon {
+                background-color: transparent;
+
+                &:before {
+                    top: 0;
+                    transform: rotate(45deg);
+                }
+
+                &:after {
+                    top: 0;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}

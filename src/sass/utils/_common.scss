@@ -1,0 +1,60 @@
+.author__avatar {
+    left: 0;
+    overflow: hidden;
+    @include absolute-center(y);
+    @include border-radius(40px);
+    @include size(30px, 30px);
+    background: #fff;
+
+    img {
+        @include size(100%, auto);
+        @include absolute-center();
+    }
+}
+
+.author__infos {
+    padding-left: 40px;
+    position: relative;
+    margin: 0;
+}
+
+.author__name {
+    padding: 0;
+    margin-right: 10px;
+    @include font-open(700, 1.4rem, 1.15);
+    display: block;
+}
+
+.author__account {
+    padding: 0;
+    margin-right: 10px;
+    @include font-open(400, 1.4rem, 1.15);
+    color: #FFFFFF;
+    display: block;
+}
+
+.toolbox-share {
+
+}
+
+.toolbox-share__title {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #D9D9D9;
+    width: 100%;
+}
+
+.toolbox-share__item {
+    display: inline-block;
+    margin-right: 17px;
+
+    .toolbox-share__btn {
+        color: $blacktext;
+        @include transition(color .2s linear);
+        font-size: 3rem;
+
+        &:hover {
+            color: $linkcolor;
+        }
+    }
+}

@@ -1,0 +1,156 @@
+.project {
+
+    @include flex;
+    @include flex--row;
+    @include flex--align-items-start;
+}
+
+.project__head {
+    @include flex;
+    @include flex--row;
+    @include flex--align-items-center;
+    margin-bottom: 10px;
+
+    .project__category {
+        background-color: $pink;
+        padding: 0 5px;
+        display: inline-block;
+        @include font-caveat(400, 1.4rem, 1.45rem);
+        color: #fff;
+        margin-right: 10px;
+        padding: .1rem 10px .3rem;
+    }
+
+    .project__title {
+        @include font-caveat(400, 2.5rem, 2.5rem);
+    }
+
+    @media (min-width: $screen-xs-min){
+    }
+
+    @media (min-width: $screen-sm-min){
+        .project__title {
+            margin: 0 0 0 auto;
+        }
+    }
+
+    @media (min-width: $screen-md-min){
+    }
+
+    @media (min-width: $screen-lg-min){
+    }
+}
+
+.project__actions {
+    @include flex;
+    @include flex--row;
+    @include flex--align-items-center;
+}
+
+.project__btn {
+    margin: 0 0 0 auto;
+}
+
+.project__socials {
+    margin-right: 15px;
+}
+
+.project__lign {
+    margin-bottom: 50px;
+
+    @media (min-width: $screen-xs-min){
+    }
+
+    @media (min-width: $screen-sm-min){
+        margin-bottom: 75px;
+    }
+
+    @media (min-width: $screen-md-min){
+    }
+
+    @media (min-width: $screen-lg-min){
+    }
+}
+
+.project__visual {
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+
+    .block-img {
+        overflow: visible;
+    }
+
+    @media (min-width: $screen-xs-min){
+    }
+
+    @media (min-width: $screen-sm-min){
+        margin-bottom: 0;
+    }
+
+    @media (min-width: $screen-md-min){
+    }
+
+    @media (min-width: $screen-lg-min){
+    }
+}
+
+.strap {
+    position: absolute;
+    bottom: -12px;
+    right: 10px;
+    z-index: 1;
+
+    &:before {
+        content: "";
+        @include svgicon('img/common/strap.svg', 10rem, 3rem);
+        display: block;
+    }
+}
+
+.strap__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include flex;
+    @include flex--row;
+    @include flex--align-items-center;
+    @include flex--justify-content-justify;
+    @include transform(rotate(-5deg));
+    width: 100%;
+    height: 100%;
+    padding: 0 15px;
+}
+
+.strap__label {
+    @include font-open(400, 1.1rem, 2.3rem);
+    color: #9B9B9B;
+    text-align: right;
+}
+
+.strap__icon {
+    padding-right: 8px;
+    margin-right: 4px;
+
+    &:before {
+        content: "";
+        width: 1px;
+        border-right: 1px solid #979797;
+        height: 11px;
+        display: inline-block;
+        position: absolute;
+        @include absolute-center(y);
+        right: 0;
+    }
+
+    &.strap__icon--actif {
+        color: $pink;
+
+        .far {
+            font-weight: 900;
+        }
+    }
+}
+
+.strap__like {
+    margin: 0;
+}

@@ -1,0 +1,567 @@
+{
+    "key": "group_5c26580ba84f0",
+    "title": "Données Ambassadeur",
+    "fields": [
+        {
+            "key": "field_5807cf6dc1650",
+            "label": "Profil complet ?",
+            "name": "is_full",
+            "type": "checkbox",
+            "instructions": "Cochée : Active le lien de la page de cet ambassadeur dans la liste des ambassadeurs.\r\nDécochée : l'ambassadeur est visible dans la liste des ambassadeurs mais son profil n'est pas accessible.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "on": "Activer"
+            },
+            "default_value": [],
+            "layout": "horizontal",
+            "allow_custom": 0,
+            "save_custom": 0,
+            "toggle": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_580291653acfc",
+            "label": "Genre",
+            "name": "genre",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "madame": "Madame",
+                "monsieur": "Monsieur"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "allow_null": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_580291dd3acfd",
+            "label": "Nom de l'ambassadeur",
+            "name": "nom_amb",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5802923fa58c8",
+            "label": "Prénom de l'ambassadeur",
+            "name": "prenom_ambassadeur",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58029258a58c9",
+            "label": "Rue",
+            "name": "rue_amb",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        },
+        {
+            "key": "field_58029298a58ca",
+            "label": "Ville",
+            "name": "ville_amb",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Autre": "Autre",
+                "Aubervilliers": "Aubervilliers",
+                "Aulnay-sous-Bois": "Aulnay-sous-Bois",
+                "Bagnolet": "Bagnolet",
+                "Bobigny": "Bobigny",
+                "Bondy": "Bondy",
+                "Clichy-sous-Bois": "Clichy-sous-Bois",
+                "Coubron": "Coubron",
+                "Drancy": "Drancy",
+                "Dugny": "Dugny",
+                "Épinay-sur-Seine": "Épinay-sur-Seine",
+                "Gagny": "Gagny",
+                "Gournay-sur-Marne": "Gournay-sur-Marne",
+                "L'Île-Saint-Denis": "L'Île-Saint-Denis",
+                "La Courneuve": "La Courneuve",
+                "Le Blanc-Mesnil": "Le Blanc-Mesnil",
+                "Le Bourget": "Le Bourget",
+                "Le Pré-Saint-Gervais": "Le Pré-Saint-Gervais",
+                "Le Raincy": "Le Raincy",
+                "Les Lilas": "Les Lilas",
+                "Les Pavillons-sous-Bois": "Les Pavillons-sous-Bois",
+                "Livry-Gargan": "Livry-Gargan",
+                "Montfermeil": "Montfermeil",
+                "Montreuil": "Montreuil",
+                "Neuilly-Plaisance": "Neuilly-Plaisance",
+                "Neuilly-sur-Marne": "Neuilly-sur-Marne",
+                "Noisy-le-Grand": "Noisy-le-Grand",
+                "Noisy-le-Sec": "Noisy-le-Sec",
+                "Pantin": "Pantin",
+                "Paris": "Paris",
+                "Pierrefitte-sur-Seine": "Pierrefitte-sur-Seine",
+                "Romainville": "Romainville",
+                "Rosny-sous-Bois": "Rosny-sous-Bois",
+                "Saint-Denis": "Saint-Denis",
+                "Saint-Ouen": "Saint-Ouen",
+                "Sevran": "Sevran",
+                "Stains": "Stains",
+                "Tremblay-en-France": "Tremblay-en-France",
+                "Vaujours": "Vaujours",
+                "Villemomble": "Villemomble",
+                "Villepinte": "Villepinte",
+                "Villetaneuse": "Villetaneuse"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "return_format": "value"
+        },
+        {
+            "key": "field_580292a8a58cb",
+            "label": "Télèphone",
+            "name": "tel_amb",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        },
+        {
+            "key": "field_580292c5a58cc",
+            "label": "Email",
+            "name": "mail_amb",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57fec9a682b3e",
+            "label": "Facebook",
+            "name": "amb_facebook",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        },
+        {
+            "key": "field_580291413acfb",
+            "label": "Twitter",
+            "name": "amb_twitter",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c2d39b24cee0",
+            "label": "Instagram",
+            "name": "amb_instagram",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_580291223acfa",
+            "label": "Linkedin",
+            "name": "amb_linkedin",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        },
+        {
+            "key": "field_580292dfa58cd",
+            "label": "Adhère",
+            "name": "adhere",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "ad_perso": "à titre personnel",
+                "ad_struct": "au titre d'une structure privée ou publique, d'une association, d'une institution"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "allow_null": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_58029388a58ce",
+            "label": "Fonction",
+            "name": "fonction",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5802939aa58cf",
+            "label": "Société \/ Organisme",
+            "name": "soc_org",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": ""
+        },
+        {
+            "key": "field_580293c5a58d0",
+            "label": "Secteur d'activités",
+            "name": "sec_act",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "sec_6": "Autre",
+                "sec_2": "Education",
+                "nsec_11": "Solidarité, secteur social, santé",
+                "sec_5": "Sport",
+                "nsec_1": "Artisanat d'art",
+                "nsec_3": "Tourisme, loisirs",
+                "nsec_4": "BTP, construction, logement et ville durable",
+                "nsec_5": "Numérique \/ digital, média, communication",
+                "nsec_7": "Aéronautique, électronique, secteur industriel",
+                "nsec_8": "Mécanique, électronique",
+                "nsec_9": "Culture, création artistique",
+                "nsec_10": "Agriculture \/ écologie urbaine",
+                "": ""
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "return_format": "value"
+        },
+        {
+            "key": "field_58e431f43ecf1",
+            "label": "Mon implication",
+            "name": "mon_implication",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_58e977b320e89",
+            "label": "Publication de l'implication",
+            "name": "type_imp",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "private": "Privée",
+                "public": "Publique"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "return_format": "value"
+        },
+        {
+            "key": "field_58e432103ecf2",
+            "label": "Je m'engage",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Je m'engage :",
+            "esc_html": 0,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_58ee11a1c5a8c",
+            "label": "Entraide et partage de savoir",
+            "name": "engage-c1",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "false": "non",
+                "true": "oui"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "allow_null": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_58ee11ecc5a8d",
+            "label": "Logistique",
+            "name": "engage-c2",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "false": "non",
+                "true": "oui"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "allow_null": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_58ee1208c5a8e",
+            "label": "Actions",
+            "name": "engage-c3",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "false": "non",
+                "true": "oui"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "allow_null": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_5c32dc7e2e046",
+            "label": "Chapeau",
+            "name": "chapeau_amb",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "tribe_organizer"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1548025979
+}

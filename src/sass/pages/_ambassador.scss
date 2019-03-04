@@ -1,0 +1,57 @@
+.page-ambassador {
+
+    @media (min-width: $screen-xs-min){
+    }
+
+    @media (min-width: $screen-sm-min){
+        .centered {
+            text-align: left;
+        }
+    }
+
+    @media (min-width: $screen-md-min){
+    }
+
+    @media (min-width: $screen-lg-min){
+    }
+}
+
+.ambassador__actions {
+    display: inline-block;
+    padding: 20px;
+    width: 296px;
+    margin: 20px auto 50px;
+    text-align: left;
+
+    &:before {
+        @include svgicon('img/common/borders-event-infos.svg', 296px, 149px);
+        content: "";
+        @include absolute-center(y);
+        left: 0;
+        display: block;
+        z-index: 1;
+        pointer-events: none;
+        background-size: 100% 100%;
+        height: 100%;
+        width: 100%;
+    }
+
+    @media (min-width: $screen-xs-min){
+    }
+
+    @media (min-width: $screen-sm-min){
+        margin-top: 20px;
+        margin-bottom: 30px;
+        width: auto;
+    }
+
+    @media (min-width: $screen-md-min){
+    }
+
+    @media (min-width: $screen-lg-min){
+    }
+}
+
+.events-title {
+    margin-bottom: 30px;
+}

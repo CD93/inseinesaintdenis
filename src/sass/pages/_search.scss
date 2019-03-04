@@ -1,0 +1,67 @@
+.page-search {
+    .title-h1 {
+        margin-bottom: 60px;
+    }
+
+    .main-h2 {
+        @include font-caveat(400, 4rem, 4rem);
+        margin-bottom: 60px;
+    }
+
+    .ambassador__actions {
+        width: 347px;
+        margin-bottom: 25px;
+    }
+
+    .ambassador-block {
+        border-bottom: none;
+    }
+
+    @media (min-width: $screen-xs-min){
+    }
+
+    @media (min-width: $screen-sm-min){
+        margin: 0;
+
+        .ambassador__actions {
+            width: 300px;
+        }
+
+        .title-h1 {
+            margin-bottom: 80px;
+        }
+    }
+
+    @media (min-width: $screen-md-min){
+    }
+
+    @media (min-width: $screen-lg-min){
+        .ambassador__actions {
+            width: 347px;
+        }
+    }
+}
+
+
+.searh-block {
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #707070;
+
+    &:last-child {
+        border-bottom: none;
+        padding: 0;
+    }
+
+    &.searh-block--news {
+        padding-bottom: 30px;
+    }
+
+    .project__lign,
+    .ambassador-block {
+        &:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+}

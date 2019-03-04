@@ -1,0 +1,247 @@
+{
+    "key": "group_5c26580c2ee67",
+    "title": "Données générales",
+    "fields": [
+        {
+            "key": "field_57fd6c42345ca",
+            "label": "Chapeau",
+            "name": "chapeau",
+            "type": "textarea",
+            "instructions": "Renseignez ici le texte du chapeau",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_57fd6cbe345cb",
+            "label": "Zone texte",
+            "name": "zone_texte",
+            "type": "wysiwyg",
+            "instructions": "Renseignez ici le texte de l'article",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "toolbar": "full",
+            "media_upload": 1,
+            "tabs": "all",
+            "delay": 0
+        },
+        {
+            "key": "field_57fd70dd886d1",
+            "label": "Type de Black Box",
+            "name": "type_de_black_box",
+            "type": "select",
+            "instructions": "Événement : Black box theme bleu\r\nArticle : Black box theme jaune\r\nProjet : Black box theme rose",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "event": "Événement",
+                "post": "Article",
+                "project": "Projet"
+            },
+            "default_value": [],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_57fd6e4359917",
+            "label": "Titre Black Box",
+            "name": "titre_black_box",
+            "type": "text",
+            "instructions": "Renseignez ici le titre de la black box",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57fd70dd886d1",
+                        "operator": "!=",
+                        "value": ""
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 50
+        },
+        {
+            "key": "field_57fd6eb259918",
+            "label": "Sous-titre Black Box",
+            "name": "sous-titre_black_box",
+            "type": "text",
+            "instructions": "Renseignez ici le sous-titre de la black box",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57fd70dd886d1",
+                        "operator": "!=",
+                        "value": ""
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 80
+        },
+        {
+            "key": "field_57fd6eed59919",
+            "label": "Texte de la Black Box",
+            "name": "texte_de_la_black_box",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57fd70dd886d1",
+                        "operator": "!=",
+                        "value": ""
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_57fd6f105991a",
+            "label": "Lien de la Black Box",
+            "name": "lien_de_la_black_box",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57fd70dd886d1",
+                        "operator": "!=",
+                        "value": ""
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_57fd8346548c6",
+            "label": "Texte du bouton de la Black Box",
+            "name": "texte_bouton_black_box",
+            "type": "text",
+            "instructions": "Texte à afficher sur le bouton de la black box",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_57fd70dd886d1",
+                        "operator": "!=",
+                        "value": ""
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "LIRE LA SUITE",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "tribe_events"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "inssd-projet"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "comments"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1550439012
+}

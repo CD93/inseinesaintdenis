@@ -1,0 +1,18 @@
+.project-infos__item {
+    @include font-open(400, 1.4rem, 2.7rem);
+    color: $greytext;
+    display: inline-block;
+
+    &:after {
+        content: "•";
+        margin: 0 5px;
+        display: inline-block;
+        position: relative;
+    }
+
+    &:last-child {
+        &:after {
+            content: none;
+        }
+    }
+}

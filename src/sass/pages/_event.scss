@@ -1,0 +1,51 @@
+.event-infos {
+    @include flex;
+    @include flex--row;
+    margin: 0 0 30px;
+}
+
+.main-infos {
+    padding-right: 30px;
+
+    .intro {
+        margin: 0 0 20px;
+    }
+}
+
+.event-localisation {
+    flex: 1 0 257px;
+}
+
+.event-localisation__map {
+    border: 1px solid #000;
+    height: 238px;
+}
+
+.main-infos__list {
+    display: inline-block;
+    padding: 20px;
+
+    &:before {
+        @include svgicon('img/common/borders-event-infos.svg', 296px, 149px);
+        content: "";
+        @include absolute-center(y);
+        left: 0;
+        display: block;
+        z-index: 1;
+        pointer-events: none;
+    }
+}
+
+.main-infos__logistic {
+    @include font-open(700, 1.4rem, 2.3rem);
+    color: $greytext;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.main-infos__icon {
+    @include absolute-center(y);
+    left: 0;
+    width: 15px;
+    text-align: center;
+}

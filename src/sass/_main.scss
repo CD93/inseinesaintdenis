@@ -1,0 +1,10 @@
+*  {
+    position: relative;
+}
+
+html {
+    @include font-open(400, 62.5%, 22px);
+}
+
+#main {
+}

@@ -1,0 +1,51 @@
+{
+    "key": "group_5c4c43e047519",
+    "title": "Données événement",
+    "fields": [
+        {
+            "key": "field_5c4c43f119b9a",
+            "label": "Ambassadeur associé",
+            "name": "ambassador_event",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "tribe_organizer"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": [
+                "featured_image"
+            ],
+            "min": 0,
+            "max": 1,
+            "return_format": "id"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "tribe_events"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1548502035
+}

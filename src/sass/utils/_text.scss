@@ -1,0 +1,169 @@
+@mixin title-h1 {
+    @include font-caveat(400, 6.5rem, 6.5rem);
+    margin: 0 0 8px 0;
+    color: $blacktext;
+
+    @media (min-width: $screen-xs-min){
+    }
+
+    @media (min-width: $screen-sm-min){
+        @include font-caveat(400, 8rem, 8rem);
+        margin: 0 0 20px 0;
+    }
+
+    @media (min-width: $screen-md-min){
+    }
+
+    @media (min-width: $screen-lg-min){
+    }
+}
+
+@mixin title-h2 {
+    @include font-caveat(400, 3rem, 3rem);
+    margin: 0 0 8px 0;
+    color: $blacktext;
+
+    @media (min-width: $screen-xs-min){
+    }
+
+    @media (min-width: $screen-sm-min){
+        margin: 0 0 10px 0;
+    }
+
+    @media (min-width: $screen-md-min){
+    }
+
+    @media (min-width: $screen-lg-min){
+    }
+}
+
+@mixin title-h3 {
+}
+
+@mixin title-h4 {
+}
+
+.title-h1 {
+    @include title-h1;
+}
+
+.title-h2 {
+    @include title-h2;
+
+    span {
+        color: $pink;
+    }
+}
+
+.title-h3 {
+    @include title-h3;
+}
+
+.title-h4 {
+    @include title-h4;
+}
+
+@mixin subtitle {
+    @include font-caveat(400, 2.5rem, 2.5rem);
+    margin: 0 0 5px 0;
+    color: $blacktext;
+
+    @media (min-width: $screen-xs-min){
+    }
+
+    @media (min-width: $screen-sm-min){
+        margin: 0 0 20px 0;
+    }
+
+    @media (min-width: $screen-md-min){
+    }
+
+    @media (min-width: $screen-lg-min){
+    }
+}
+
+@mixin text {
+    @include font-open(400, 1.4rem, 2.3rem);
+    color: $greytext;
+}
+
+p {
+    @include text();
+    margin: 0 0 20px;
+    text-align: left;
+}
+
+.intro {
+    @include text();
+    color: #000;
+    margin: 0 0 40px;
+    text-align: left;
+    font-weight: 700;
+}
+
+ol,
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.list {
+    margin: 15px 0 15px 20px;
+
+    li {
+        margin: 10px 0;
+        padding-left: 20px;
+        @include text();
+
+        &:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            vertical-align: top;
+            margin-right: 6px;
+            font-size: 32px;
+        }
+    }
+
+    @media (min-width: $screen-sm-min) {
+        ul {
+            margin: 26px 0 26px 20px;
+        }
+    }
+}
+
+.content-txt {
+    h2 {
+        @include font-caveat(400, 3rem, 3rem);
+    }
+
+    h3 {
+        @include font-caveat(400, 2.8rem, 2.8rem);
+    }
+
+    h3 {
+        @include font-caveat(400, 2rem, 2rem);
+    }
+
+    ul {
+        @extend .list;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    blockquote {
+        border-left: none;
+
+        p {
+            color: $blue;
+            @include font-open(700i, 2rem, 3rem);
+            padding: 10px 40px;
+            border-left: none;
+            text-align: center;
+        }
+    }
+}

@@ -1,19 +1,43 @@
-*.log
-wp-config.php
-wp-content/advanced-cache.php
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/mu-plugins/
-wp-content/wp-cache-config.php
-wp-content/plugins/hello.php
+### GULP ###
+node_modules/*
 
-/.htaccess
-/license.txt
-/readme.html
-/sitemap.xml
-/sitemap.xml.gz
+### OS X ###
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+### WINDOWS ###
+ehthumbs.db
+Thumbs.db
+*.com
+*.dll
+*.exe
+*.o
+*.so
+
+### IDE ###
+.idea
+
+### WORDPRESS ###
+dist/*.log
+dist/wp-content/cache/
+dist/wp-content/advanced-cache.php
+dist/wp-content/backup-db/
+dist/wp-content/backups/
+dist/wp-content/blogs.dir/
+dist/wp-content/upgrade/
+dist/wp-content/wp-cache-config.php
+dist/wp-content/uploads/
+dist/wp-content/themes/*
+!dist/wp-content/themes/index.php
+dist/wp-content/languages/themes/*-backup-*
+dist/wp-content/mu-plugins/
+dist/wp-content/wp-cache-config.php
+dist/.htaccess
+dist/license.txt
+dist/readme.html
+dist/sitemap.xml
+dist/sitemap.xml.gz
 
