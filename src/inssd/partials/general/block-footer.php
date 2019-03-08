@@ -50,10 +50,6 @@
             </div>
         </footer>
 
-
-
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo get_field('params_gmap_api_key', 'option'); ?>&callback=initMap" type="text/javascript"></script>
-
         <?php
         wp_footer();
 

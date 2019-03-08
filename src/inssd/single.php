@@ -28,7 +28,7 @@ $customFields = get_fields();
                             <div class="article-infos">
                                 <?php
                                 foreach( $newsTerms as $newsTerm ){
-                                    echo '<p class="article-infos__category">' . $newsTerm->name . '</p>';
+                                    echo '<a href="' . get_category_link($newsTerm->term_id) . '"><p class="article-infos__category">'. $newsTerm->name . '</p></a>';
                                 }
                                 ?>
                                 <p class="article-infos__date"><?php echo $newsDate; ?></p>

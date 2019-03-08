@@ -18,18 +18,9 @@
             "post_type": [
                 "post"
             ],
-            "taxonomy": [
-                "category:actuality",
-                "category:ambassadeurs",
-                "category:articles",
-                "category:page",
-                "category:portraits",
-                "category:revue-de-presse",
-                "category:uncategorized"
-            ],
+            "taxonomy": "",
             "filters": [
-                "search",
-                "taxonomy"
+                "search"
             ],
             "elements": [
                 "featured_image"
@@ -75,5 +66,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1548026025
+    "modified": 1551627873
 }

@@ -55,15 +55,15 @@ $search = get_query_var('s');
                                                 ?>
                                                 <div class="col-md-6">
                                                     <div class="block-news borders">
-                                                        <a href="<?php echo $newsLink; ?>" class="block-news__link">
+
                                                             <div class="block-news__link__img">
                                                                 <div class="block-img">
                                                                     <img src="<?php echo $newsThumbUrl; ?>" class=""
                                                                          alt="">
                                                                 </div>
-                                                                <div class="category category--yellow block-news__link__img__category"><?php echo $newsTerm->name; ?></div>
+                                                                <div class="category-element category--yellow block-news__link__img__category"><a href="<?php echo get_category_link($newsTerm->term_id); ?>" class=""><?php echo $newsTerm->name; ?></a></div>
                                                             </div>
-
+                                                        <a href="<?php echo $newsLink; ?>" class="block-news__link">
                                                             <div class="block-news__link__text">
                                                                 <h2 class="title-h2 block-news__link__text__title">
                                                                     <?php echo wp_trim_words($newsTitle, 8, '...'); ?>

@@ -125,7 +125,7 @@ function getDomains($key){
 
     switch ($key) {
         case 'sec_2':
-            $secteur = '&Eacute;ducation';
+            $secteur = 'Éducation';
             break;
         case 'sec_5':
             $secteur = 'Sport';

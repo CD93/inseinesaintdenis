@@ -51,7 +51,7 @@ class ExcelAmbassadors {
         // create a file pointer connected to the output stream
         $output = fopen('php://output', 'w');
         // set the column headers for the csv
-        $headings = array( 'Nom', 'Prenom', 'Email', 'Téléphone', 'Ville');
+        $headings = array('Genre', 'Nom', 'Prénom', 'Email', 'Téléphone', 'Rue', 'Ville', 'Type adhésion', 'Fonction', 'Société/Organisme', 'Domaine', 'Facebook', 'Twitter', 'Instagram', 'Linkedin');
         // output the column headings
         fputcsv($output, $headings );
         // get all simple products where stock is managed
@@ -65,12 +65,81 @@ class ExcelAmbassadors {
 
         $loop = new WP_Query( $args );
         while ( $loop->have_posts() ) : $loop->the_post();
+
+            $genre = get_field('genre');
+            if( empty($genre)){
+                $genre = 'Non binaire';
+            }
+
             $name = get_field('nom_amb');
             $firstName = get_field('prenom_ambassadeur');
             $email = get_field('mail_amb');
+            $tel = get_field('tel_amb');
+
+            if( empty($tel)){
+                $tel = 'Non communiqué';
+            }
+
+            $street = get_field('rue_amb');
+            if( empty($street)){
+                $street = 'Non communiqué';
+            }
+
+            $city = get_field('ville_amb');
+            if( empty($city)){
+                $city = 'Non communiqué';
+            }
+
+            $facebook = get_field('amb_facebook');
+            if( empty($facebook)){
+                $facebook = 'Non communiqué';
+            }
+
+            $twitter = get_field('amb_twitter');
+            if( empty($twitter)){
+                $twitter = 'Non communiqué';
+            }
+
+            $instagram = get_field('amb_instagram');
+            if( empty($instagram)){
+                $instagram = 'Non communiqué';
+            }
+
+            $linkedin = get_field('amb_linkedin');
+            if( empty($linkedin)){
+                $linkedin = 'Non communiqué';
+            }
+
+            $adhere = get_field('adhere');
+            if( !empty($adhere)){
+                if( $adhere === 'ad_struct'){
+                    $adhere = 'au titre d’une structure privée ou publique, d’une association, d’une institution';
+                }else if( $adhere === 'ad_perso'){
+                    $adhere = 'à titre personnel';
+                }
+            }else{
+                $adhere = 'Non communiqué';
+            }
+
+            $fonction = get_field('fonction');
+            if( empty($fonction)){
+                $fonction = 'Non communiqué';
+            }
+
+            $company = get_field('soc_org');
+            if( empty($company)){
+                $company = 'Non communiqué';
+            }
+
+            $sector = get_field('sec_act');
+            if( !empty($sector)){
+                $sector = getDomains($sector);
+            }else{
+                $sector = 'Non communiqué';
+            }
 
             if( !empty($name) || !empty($firstName) || !empty($email) ){
-                $row = array( $name, $firstName, $email, get_field('tel_amb'), get_field('ville_amb') );
+                $row = array($genre, $name, $firstName, $email, $tel, $street, $city, $adhere, $fonction, $company, $sector, $facebook, $twitter, $instagram, $linkedin );
                 fputcsv($output, $row);
             }
         endwhile;

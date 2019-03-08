@@ -1323,18 +1323,9 @@ Projet : Black box theme rose',
                 'post_type' => array(
                     0 => 'post',
                 ),
-                'taxonomy' => array(
-                    0 => 'category:actuality',
-                    1 => 'category:ambassadeurs',
-                    2 => 'category:articles',
-                    3 => 'category:page',
-                    4 => 'category:portraits',
-                    5 => 'category:revue-de-presse',
-                    6 => 'category:uncategorized',
-                ),
+                'taxonomy' => '',
                 'filters' => array(
                     0 => 'search',
-                    1 => 'taxonomy',
                 ),
                 'elements' => array(
                     0 => 'featured_image',

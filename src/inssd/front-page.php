@@ -22,14 +22,14 @@ $eventText = get_field('params_home_event_text','option');
                     <div class="section-block clearfix">
                         <div class="col-md-12">
                             <div class="block-news block-news--large">
-                                <a href="<?php echo $featuredPostLink; ?>" class="block-news__link">
+
                                     <div class="block-news__link__img">
                                         <div class="block-img">
                                             <img src="<?php echo $featuredPostThumbUrl; ?>" class="" alt="">
                                         </div>
-                                        <div class="category category--pink block-news__link__img__category"><?php echo $featuredPostTerm->name; ?></div>
+                                        <div class="category-element category--pink block-news__link__img__category"><a href="<?php echo get_category_link($featuredPostTerm->term_id); ?>" class=""><?php echo $featuredPostTerm->name; ?></a></div>
                                     </div>
-
+                                <a href="<?php echo $featuredPostLink; ?>" class="block-news__link">
                                     <div class="block-news__link__text">
                                         <h2 class="title-h2 block-news__link__text__title">
                                             <?php echo $featuredPostTitle; ?>
@@ -63,17 +63,17 @@ $eventText = get_field('params_home_event_text','option');
                                 $newsLink = get_the_permalink( $newsID );
                                 $newsTerm = get_the_terms( $newsID, 'category' )[0];
                                 $newsThumbUrl = get_the_post_thumbnail_url( $newsID,'thumb_small_single_page_article' );
+
                                 ?>
                                 <div class="col-md-6">
                                     <div class="block-news borders">
-                                        <a href="<?php echo $newsLink; ?>" class="block-news__link">
                                             <div class="block-news__link__img">
                                                 <div class="block-img">
                                                     <img src="<?php echo $newsThumbUrl; ?>" class="" alt="">
                                                 </div>
-                                                <div class="category category--yellow block-news__link__img__category"><?php echo $newsTerm->name; ?></div>
+                                                <div class="category-element category--yellow block-news__link__img__category"><a href="<?php echo get_category_link($newsTerm->term_id); ?>" class=""><?php echo $newsTerm->name; ?></a></div>
                                             </div>
-
+                                        <a href="<?php echo $newsLink; ?>" class="block-news__link">
                                             <div class="block-news__link__text">
                                                 <h2 class="title-h2 block-news__link__text__title">
                                                     <?php echo wp_trim_words( $newsTitle,8, '...' ); ?>
@@ -121,11 +121,14 @@ $eventText = get_field('params_home_event_text','option');
                                 $eventTitle = get_the_title($eventID);
                                 $eventChapeau = get_field('chapeau', $eventID);
                                 $eventLink = get_the_permalink( $eventID );
-                                $eventTerm = get_the_terms( $eventID, 'tribe_events_cat' )[0]->name;
+                                $eventTerms = get_the_terms( $eventID, 'tribe_events_cat' );
 
-                                if( empty($eventTerm)){
+                                if( !empty($eventTerms)){
+                                    $eventTerm = $eventTerms[0]->name;
+                                }else{
                                     $eventTerm = 'événements';
                                 }
+
                                 $eventThumbUrl = get_the_post_thumbnail_url( $eventID,'thumb_small_single_page_article' );
                                 ?>
                                 <div class="col-md-6">
@@ -135,7 +138,7 @@ $eventText = get_field('params_home_event_text','option');
                                                 <div class="block-img">
                                                     <img src="<?php echo $eventThumbUrl; ?>" class="" alt="">
                                                 </div>
-                                                <div class="category category--pink block-events__link__img__category"><?php echo $eventTerm; ?></div>
+                                                <div class="category-element category--pink block-events__link__img__category"><?php echo $eventTerm; ?></div>
                                             </div>
 
                                             <div class="block-events__link__text">
@@ -168,12 +171,6 @@ $eventText = get_field('params_home_event_text','option');
                                     <form class="events__infos__viewer__form">
                                         <select class="events__infos__select">
                                             <option>Toutes les thématiques</option>
-
-                                            <!-- @todo pierro : dynamiser les attributs ci dessous  -->
-                                            <!-- data-events-count est un atrribut qui doit contenir le nombre total events pour la thématique  -->
-                                            <!-- Puis, boucler sur chacun des events afin de générer leur sattributs nécessaires : data-events-date-X, data-events-latlng-X et data-events-link-X -->
-                                            <!-- data-events-link-0 correspond à son slug, ce la me permet de gérer le lien par la suite -->
-                                            <!-- exemples ci dessous -->
                                             <?php
                                             foreach($thematiqueEventsArray as $keyID => $thematiqueEvents) {
                                                 ?>

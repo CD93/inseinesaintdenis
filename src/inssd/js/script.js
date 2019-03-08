@@ -684,10 +684,7 @@
 
     }
 
-    window.initMap = initMap;
-    // initMap();
-
-
+    initMap();
 
     $.extend($.validator.messages, {
         required: "Ce champ est obligatoire.",
