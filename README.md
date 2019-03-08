@@ -1,15 +1,16 @@
 #INSSD THEME
 
-PREREQUIS (LOCAL UNIQUEMENT) :
+PRÉREQUIS (LOCAL UNIQUEMENT) :
 
 NE PAS OUBLIER DE RENSEIGNER LES VARIABLES D'ENVIRONNEMENTS DANS VOTRE VHOST :
 
 	SetEnv MYSQL_HOST localhost
-    SetEnv MYSQL_USER user
-    SetEnv MYSQL_PASSWORD pass
-    SetEnv MYSQL_DATABASE inssd_bdd
+    	SetEnv MYSQL_USER user
+    	SetEnv MYSQL_PASSWORD pass
+    	SetEnv MYSQL_DATABASE inssd_bdd
 
-CONFIGURER LA REDIRECTION dans /etc/hosts (MacOs / Linux) - C:\Windows\System32\drivers\etc (Windows 10)
+CONFIGURER LA REDIRECTION dans :
+/etc/hosts (MacOs / Linux) - C:\Windows\System32\drivers\etc (Windows 10)
 
 INSTALLATION :
 
@@ -24,8 +25,8 @@ Pour Windows : install -g gulp
 https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
 
 
-LANCER LA COMPILCATION SASS :
+LANCER LA COMPILATION SASS :
 
-Dans le terminal placez vous dans el dossier du repo git /inseinesaintdenis/ et taper : gulp
+Dans le terminal placez vous à la racine du repo /inseinesaintdenis/ et tapez : gulp
 
 That it ! enjoy =)
