@@ -59,8 +59,8 @@ class ExcelAmbassadors {
             'post_type'			=> 'tribe_organizer',
             'post_status' 		=> 'publish',
             'posts_per_page' 	=> -1,
-            'orderby'			=> 'name',
-            'order'				=> 'ASC',
+            'orderby'			=> 'date',
+            'order'				=> 'DESC',
         );
 
         $loop = new WP_Query( $args );
