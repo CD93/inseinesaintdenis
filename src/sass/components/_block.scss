@@ -37,7 +37,7 @@
     }
 }
 
-.category {
+.category-element {
     text-transform: uppercase;
     @include font-open(400, 1.2rem, 1.25rem);
     letter-spacing: .15em;
@@ -46,12 +46,25 @@
     &.category--pink {
         @include pink-bg;
         color: $white;
+        a{
+            color: #fff;
+        }
+        a:hover{
+            color: #000;
+        }
     }
 
     &.category--yellow {
         @include yellow-bg;
         color: $blacktext;
+        a{
+            color: #000;
+        }
+        a:hover{
+            color: #fff;
+        }
     }
+
 }
 
 .push-more {
