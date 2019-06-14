@@ -571,6 +571,7 @@ Décochée : l\'ambassadeur est visible dans la liste des ambassadeurs mais son 
         'hide_on_screen' => '',
         'active' => 1,
         'description' => '',
+        'modified' => 1548025979,
     ));
 
     acf_add_local_field_group(array(
@@ -622,6 +623,7 @@ Décochée : l\'ambassadeur est visible dans la liste des ambassadeurs mais son 
         'hide_on_screen' => '',
         'active' => 1,
         'description' => '',
+        'modified' => 1548502035,
     ));
 
     acf_add_local_field_group(array(
@@ -859,6 +861,11 @@ Projet : Black box theme rose',
                     'operator' => '==',
                     'value' => 'page',
                 ),
+                array(
+                    'param' => 'page_template',
+                    'operator' => '!=',
+                    'value' => 'page-laureats.php',
+                ),
             ),
         ),
         'menu_order' => 0,
@@ -870,6 +877,226 @@ Projet : Black box theme rose',
             0 => 'the_content',
             1 => 'comments',
         ),
+        'active' => 1,
+        'description' => '',
+    ));
+
+    acf_add_local_field_group(array(
+        'key' => 'group_5cfa937486024',
+        'title' => 'Données Lauréat',
+        'fields' => array(
+            array(
+                'key' => 'field_5cfa93a5c6722',
+                'label' => 'Nom de l\'association',
+                'name' => 'laureat_organism_name',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_5cfa9a38c6d9a',
+                'label' => 'Nom du président',
+                'name' => 'laureat_director_name',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_5cfa9a53c6d9b',
+                'label' => 'Email',
+                'name' => 'laureat_email',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_5cfa9a61c6d9c',
+                'label' => 'Site internet',
+                'name' => 'laureat_website',
+                'type' => 'text',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_5cfa94dac6723',
+                'label' => 'Descriptif',
+                'name' => 'laureat_text',
+                'type' => 'textarea',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'maxlength' => '',
+                'rows' => '',
+                'new_lines' => '',
+            ),
+            array(
+                'key' => 'field_5cfa9536c6724',
+                'label' => 'Ambassadeur associé',
+                'name' => 'laureat_ambassador',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'tribe_organizer',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'search',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => 1,
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_5cfa9a9bd98c5',
+                'label' => 'Réseaux sociaux',
+                'name' => 'laureat_social_network',
+                'type' => 'group',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'layout' => 'row',
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_5cfa9ac1d98c6',
+                        'label' => 'Facebook',
+                        'name' => 'facebook',
+                        'type' => 'text',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                    ),
+                    array(
+                        'key' => 'field_5cfa9acbd98c7',
+                        'label' => 'Twitter',
+                        'name' => 'twitter',
+                        'type' => 'text',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                    ),
+                    array(
+                        'key' => 'field_5cfa9aefd98c8',
+                        'label' => 'Instagram',
+                        'name' => 'instagram',
+                        'type' => 'text',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'laureat',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'acf_after_title',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
         'active' => 1,
         'description' => '',
     ));
@@ -936,6 +1163,7 @@ Projet : Black box theme rose',
         ),
         'active' => 1,
         'description' => '',
+        'modified' => 1548026086,
     ));
 
     acf_add_local_field_group(array(
@@ -998,6 +1226,7 @@ Projet : Black box theme rose',
         'hide_on_screen' => '',
         'active' => 1,
         'description' => '',
+        'modified' => 1548026091,
     ));
 
     acf_add_local_field_group(array(
@@ -1068,6 +1297,7 @@ Projet : Black box theme rose',
         'hide_on_screen' => '',
         'active' => 1,
         'description' => '',
+        'modified' => 1548026012,
     ));
 
     acf_add_local_field_group(array(
@@ -1301,6 +1531,7 @@ Projet : Black box theme rose',
         'hide_on_screen' => '',
         'active' => 1,
         'description' => '',
+        'modified' => 1548502054,
     ));
 
     acf_add_local_field_group(array(
@@ -1371,6 +1602,7 @@ Projet : Black box theme rose',
         'hide_on_screen' => '',
         'active' => 1,
         'description' => '',
+        'modified' => 1551627873,
     ));
 
     acf_add_local_field_group(array(
@@ -1433,6 +1665,7 @@ Projet : Black box theme rose',
         'hide_on_screen' => '',
         'active' => 1,
         'description' => '',
+        'modified' => 1548026049,
     ));
 
     acf_add_local_field_group(array(
@@ -1611,6 +1844,7 @@ Projet : Black box theme rose',
         'hide_on_screen' => '',
         'active' => 1,
         'description' => '',
+        'modified' => 1548026055,
     ));
 
     acf_add_local_field_group(array(
@@ -1678,6 +1912,7 @@ Projet : Black box theme rose',
         'hide_on_screen' => '',
         'active' => 1,
         'description' => '',
+        'modified' => 1548026060,
     ));
 
     acf_add_local_field_group(array(
@@ -1784,6 +2019,7 @@ Projet : Black box theme rose',
         'hide_on_screen' => '',
         'active' => 1,
         'description' => '',
+        'modified' => 1548026065,
     ));
 
     acf_add_local_field_group(array(
@@ -1827,6 +2063,7 @@ Projet : Black box theme rose',
         'hide_on_screen' => '',
         'active' => 1,
         'description' => '',
+        'modified' => 1548026071,
     ));
 
     acf_add_local_field_group(array(
@@ -1927,6 +2164,7 @@ Projet : Black box theme rose',
         'hide_on_screen' => '',
         'active' => 1,
         'description' => '',
+        'modified' => 1548026076,
     ));
 
     acf_add_local_field_group(array(
@@ -2269,6 +2507,7 @@ Projet : Black box theme rose',
         'hide_on_screen' => '',
         'active' => 1,
         'description' => '',
+        'modified' => 1550435973,
     ));
 
 endif;

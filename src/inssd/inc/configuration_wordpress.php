@@ -23,6 +23,7 @@ function inssd_setup() {
 	show_admin_bar( false );
 
     add_image_size( 'thumb_single_page_article', 800, 500, array( 'center', 'center' ) );
+    add_image_size( 'thumb_ambassador_small', 80, 80, array( 'center', 'center' ) );
     add_image_size( 'thumb_small_single_page_article', 600, 400, array( 'center', 'center' ) );
     add_image_size( 'thumb_archive_page_project', 343, 200, array( 'center', 'center' ) );
     add_image_size( 'thumb_archive_page_ambassador', 156, 156, array( 'center', 'center' ) );

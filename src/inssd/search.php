@@ -258,8 +258,7 @@ $search = get_query_var('s');
                                                             || (!empty($customFieldsAmbassador['amb_instagram']) && $customFieldsAmbassador['amb_instagram'] != " ")) {
                                                             ?>
                                                             <div class="ambassador__actions">
-                                                                <h2 class="title-h2">Retrouvez-le sur les réseaux
-                                                                    sociaux</h2>
+                                                                <h2 class="title-h2">Ses réseaux sociaux</h2>
 
                                                                 <ul class="ambassador__socials social">
                                                                     <?php if (!empty($customFieldsAmbassador['amb_facebook'])) { ?>

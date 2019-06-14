@@ -229,6 +229,11 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "page-laureats.php"
             }
         ]
     ],
@@ -243,5 +248,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1550439012
+    "modified": 1560101527
 }

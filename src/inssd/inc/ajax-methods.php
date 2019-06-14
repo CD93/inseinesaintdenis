@@ -344,6 +344,7 @@ function search_event_callback() {
         while ( $eventsQry->have_posts() ) {
             $eventsQry->the_post();
 
+            global $post;
             $eventID = $post->ID;
             $startDate = get_field('start_date');
             $startDateTime = DateTime::createFromFormat("Y-m-d H:i:s", $startDate);
@@ -478,7 +479,6 @@ function search_ambassador_callback() {
                 global $post;
                 $ambassadorID = $post->ID;
 
-                $ambassadorLink = get_the_permalink($ambassadorID);
                 $ambassadorThumbUrl = get_the_post_thumbnail_url($ambassadorID, 'thumb_archive_page_ambassador');
 
                 $customFieldsAmbassador = get_fields($ambassadorID);
@@ -546,8 +546,7 @@ function search_ambassador_callback() {
                                 || (!empty($customFieldsAmbassador['amb_instagram']) && $customFieldsAmbassador['amb_instagram'] != " ")) {
                                 ?>
                                 <div class="ambassador__actions">
-                                    <h2 class="title-h2">Retrouvez-le sur les réseaux
-                                        sociaux</h2>
+                                    <h2 class="title-h2">Ses réseaux sociaux</h2>
 
                                     <ul class="ambassador__socials social">
                                         <?php if (!empty($customFieldsAmbassador['amb_facebook'])) { ?>
@@ -599,4 +598,296 @@ function search_ambassador_callback() {
 
 
     wp_send_json( $response );
+}
+
+add_action( 'wp_ajax_nopriv_search_laureates', 'search_laureates_callback' );
+add_action( 'wp_ajax_search_laureates', 'search_laureates_callback' );
+function search_laureates_callback() {
+    // Security
+    $nonce = isset($_POST['nonce']) ? sanitize_text_field($_POST['nonce']) : 0;
+    if ( !wp_verify_nonce($nonce, 'searchLaureateNonce') ) {
+        exit(__('not allowed', 'inssd'));
+    }
+
+    $them = isset( $_POST['params']['thematic'] ) ? filter_var($_POST['params']['thematic'],FILTER_SANITIZE_NUMBER_INT) : 0;
+    $subThem = isset( $_POST['params']['subThematic'] ) ? filter_var($_POST['params']['subThematic'],FILTER_SANITIZE_NUMBER_INT) : 0;
+    $zone = isset( $_POST['params']['zone'] ) ? filter_var($_POST['params']['zone'],FILTER_SANITIZE_NUMBER_INT) : 0;
+
+    $numPage = isset( $_POST['params']['page'] ) ? filter_var($_POST['params']['page'],FILTER_SANITIZE_NUMBER_INT) : 1;
+
+    $associationName = isset( $_POST['params']['association'] ) ? filter_var($_POST['params']['association'],FILTER_SANITIZE_STRING) : '';
+    $projectName = isset( $_POST['params']['project'] ) ? filter_var($_POST['params']['project'],FILTER_SANITIZE_STRING) : '';
+
+    $them = intval($them);
+    $subThem = intval($subThem);
+    $zone = intval($zone);
+    $numPage = intval($numPage);
+
+    $response['status'] = 201;
+    $response['message'] = '<p>Aucun lauréat trouvé</p>';
+
+    $args = array(
+        'post_type' => 'laureat',
+        'post_status' => array('publish'),
+        'posts_per_page' => MAX_LAUREATS_PER_PAGE,
+        'order' => 'ASC',
+        'orderby' => 'name',
+        'paged' => $numPage,
+        's' => $projectName
+    );
+
+    $tax_query = array();
+    $meta_query = array();
+
+    if (!empty($them)) {
+        $tax_query[] = array(
+            'taxonomy' => 'laureat_thematique',
+            'field' => 'term_id',
+            'terms' => $them
+        );
+    }
+    if (!empty($subThem)) {
+        $tax_query[] = array(
+            'taxonomy' => 'laureat_sub_thematique',
+            'field' => 'term_id',
+            'terms' => $subThem
+        );
+    }
+    if (!empty($zone)) {
+        $tax_query[] = array(
+            'taxonomy' => 'laureat_zone',
+            'field' => 'term_id',
+            'terms' => $zone
+        );
+    }
+
+    if (!empty($tax_query)) {
+        $tax_query['relation'] = 'AND';
+        $args['tax_query'] = $tax_query;
+    }
+
+    if (!empty($associationName)) {
+        $meta_query[] = array(
+            'key' => 'laureat_organism_name',
+            'compare' => 'LIKE',
+            'value' => $associationName
+        );
+    }
+
+    if (!empty($meta_query)) {
+        $args['meta_query'] = $meta_query;
+    }
+
+    $laureatesQry = new WP_Query($args);
+    $laureatesCount = $laureatesQry->found_posts;
+
+    ob_start();
+
+    if ($laureatesQry->have_posts()) {
+        ?>
+        <div class="laureates-blocks">
+            <?php
+
+            while ($laureatesQry->have_posts()) {
+                $laureatesQry->the_post();
+
+                global $post;
+                $laureateID = $post->ID;
+                $laureateTitle = get_the_title($laureateID);
+
+                $customFieldsLaureate = get_fields();
+
+                $laureatThumbUrl = get_the_post_thumbnail_url($laureateID, 'thumb_archive_page_ambassador');
+                if (!$laureatThumbUrl) {
+                    $laureatThumbUrl = THEME_URL . 'img/ambassador_default.jpg';
+                }
+
+                ?>
+                <div class="laureate-block">
+                    <h2 class="title-h2 laureate__name"><?php echo $laureateTitle; ?></h2>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="laureate__infos">
+                                <div class="laureate__avatar"><img
+                                            src="<?php echo $laureatThumbUrl; ?>" alt=""
+                                            title=""></div>
+
+                                <ul class="laureate__specialties">
+                                    <?php
+                                    if (!empty($customFieldsLaureate['laureat_organism_name']) || !empty($customFieldsLaureate['laureat_director_name'])  ) {
+                                        ?>
+                                        <li class="laureate__specialty laureate__specialty--association">
+                                            <span class="laureate__specialty-icon"><i></i></span>
+                                            <p>
+                                                <?php echo $customFieldsLaureate['laureat_organism_name']; ?>
+                                                <br>
+                                                <?php echo $customFieldsLaureate['laureat_director_name']; ?>
+                                            </p>
+                                        </li>
+                                        <?php
+                                    }
+                                    $zones = get_the_terms($laureateID, 'laureat_zone');
+
+                                    if (!empty($zones) ) {
+                                        ?>
+                                        <li class="laureate__specialty laureate__specialty--zone">
+                                            <span class="laureate__specialty-icon"><i></i></span>
+                                            <p>
+                                                <?php
+                                                $zonesStr = '';
+                                                foreach($zones as $zone){
+                                                    $zonesStr .= $zone->name;
+                                                    if( end($zones) !== $zone){
+                                                        $zonesStr .= '<br>';
+                                                    }
+                                                }
+                                                echo $zonesStr;
+
+                                                ?>
+                                            </p>
+                                        </li>
+                                        <?php
+                                    }
+                                    $thems = get_the_terms($laureateID, 'laureat_thematique');
+                                    $subThems = get_the_terms($laureateID, 'laureat_sub_thematique');
+
+                                    if ( !empty($thems) || !empty($subThems) ) {
+                                        ?>
+                                        <li class="laureate__specialty laureate__specialty--thematic">
+                                            <span class="laureate__specialty-icon"><i></i></span>
+                                            <p>
+                                                <?php
+                                                if ( !empty($thems) ) {
+                                                    $themsStr = '';
+                                                    foreach($thems as $them){
+                                                        $themsStr .= $them->name;
+                                                        if( end($thems) !== $them){
+                                                            $themsStr .= '<br>';
+                                                        }
+                                                    }
+                                                    echo $themsStr;
+                                                    if ( !empty($subThems) ) {
+                                                        echo '<br>';
+                                                    }
+                                                }
+                                                if ( !empty($subThems) ) {
+                                                    $subThemsStr = '';
+                                                    foreach($subThems as $subThem){
+                                                        $subThemsStr .= $subThem->name;
+                                                        if( end($subThems) !== $subThem){
+                                                            $subThemsStr .= '<br>';
+                                                        }
+                                                    }
+                                                    echo $subThemsStr;
+                                                }
+                                                ?>
+                                            </p>
+                                        </li>
+                                        <?php
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <?php
+
+                            if ((!empty($customFieldsLaureate['laureat_social_network']['facebook']))
+                                || (!empty($customFieldsLaureate['laureat_social_network']['twitter']))
+                                || (!empty($customFieldsLaureate['laureat_social_network']['instagram']) )) {
+                                ?>
+                                <div class="laureate__actions">
+                                    <h2 class="title-h2">Ses réseaux sociaux</h2>
+
+                                    <ul class="laureate__socials social">
+                                        <?php if (!empty($customFieldsLaureate['laureat_social_network']['facebook'])) { ?>
+                                            <li class="laureate__social social__item"><i
+                                                        class="social__item-icon fab fa-facebook-f"></i><a
+                                                        href="<?php echo $customFieldsLaureate['laureat_social_network']['facebook']; ?>"><?php echo $customFieldsLaureate['laureat_social_network']['facebook']; ?></a>
+                                            </li>
+                                        <?php }
+                                        if (!empty($customFieldsLaureate['laureat_social_network']['twitter'])) {
+                                            ?>
+                                            <li class="laureate__social social__item"><i
+                                                        class="social__item-icon fab fa-twitter"></i><a
+                                                        href="<?php echo $customFieldsLaureate['laureat_social_network']['twitter']; ?>"><?php echo $customFieldsLaureate['laureat_social_network']['twitter']; ?></a>
+                                            </li>
+                                        <?php }
+                                        if (!empty($customFieldsLaureate['laureat_social_network']['instagram'])) {
+                                            ?>
+                                            <li class="laureate__social social__item"><i
+                                                        class="social__item-icon fab fa-instagram"></i>
+                                                <a href="<?php echo $customFieldsLaureate['laureat_social_network']['instagram']; ?>"><?php echo $customFieldsLaureate['laureat_social_network']['instagram']; ?></a>
+                                            </li>
+                                        <?php }
+                                        if (!empty($customFieldsLaureate['laureat_email'])) {
+                                            ?>
+                                            <li class="laureate__social social__item"><i
+                                                        class="social__item-icon fas fa-envelope"></i>
+                                                <a href="<?php echo 'mailto:' . $customFieldsLaureate['laureat_email']; ?>"><?php echo $customFieldsLaureate['laureat_email']; ?></a>
+                                            </li>
+                                        <?php } ?>
+
+                                    </ul>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+
+                    <?php
+                    if (!empty($customFieldsLaureate['laureat_text'])) {
+                        ?>
+                        <div class="laureate__specialty laureate__specialty--desc">
+                            <span class="laureate__specialty-icon"><i></i></span>
+                            <p><?php echo $customFieldsLaureate['laureat_text']; ?></p>
+                        </div>
+                        <?php
+                    }
+
+                    if(!empty($customFieldsLaureate['laureat_ambassador'])) {
+
+                        $ambassadorPost = get_post($customFieldsLaureate['laureat_ambassador'][0]);
+                        $ambassadorID = $ambassadorPost->ID;
+
+                        $ambassadorName = ucfirst( strtolower( get_field('nom_amb', $ambassadorID) ) );
+                        $ambassadorFirstName = ucfirst( strtolower(get_field('prenom_ambassadeur', $ambassadorID) ) );
+                        $ambLink = get_permalink($ambassadorID);
+                        $ambassadorThumbUrl = get_the_post_thumbnail_url($ambassadorID, 'thumb_ambassador_small');
+
+                        if (!$ambassadorThumbUrl) {
+                            $ambassadorThumbUrl = THEME_URL . 'img/ambassador_default.jpg';
+                        }
+
+                        ?>
+                        <a href="<?php echo $ambLink; ?>" class="laureate__ambassador">
+                            <div class="laureate-ambassador__avatar-wrapper">
+                                <div class="laureate-ambassador__avatar"><img src="<?php echo $ambassadorThumbUrl; ?>" alt="" title=""></div>
+                            </div>
+                            <p>Ambassadeur : <?php echo $ambassadorFirstName . ' ' . $ambassadorName;?></p>
+                        </a>
+                        <?php
+                    }
+                    ?>
+                </div>
+                <?php
+            }
+            ?>
+        </div>
+        <?php
+        $response['content'] = ob_get_clean();
+        ob_start();
+        wp_pagination( $laureatesQry, $numPage, true);
+        $response['pagination'] = ob_get_clean();
+
+        $response['status'] = 200;
+        $response['message'] = 'OK';
+        $response['taxo'] = $tax_query;
+
+        wp_reset_postdata();
+    }
+
+    wp_send_json( $response );
+
 }

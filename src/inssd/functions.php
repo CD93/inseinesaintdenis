@@ -5,6 +5,7 @@
 define('THEME_DIR', get_template_directory() . '/');
 define('THEME_URL', get_template_directory_uri().'/');
 define('MAX_AMBASSADORS_PER_PAGE', 4);
+define('MAX_LAUREATS_PER_PAGE', 4);
 
 if(!ENV_DEV){
     define( 'ACF_LITE' , true );
@@ -13,6 +14,7 @@ if(!ENV_DEV){
 require_once( __DIR__ . '/lib/TwitterAPIExchange.php');
 require_once( __DIR__ . '/inc/datatypes.php');
 require_once( __DIR__ . '/inc/ExcelAmbassadors.php');
+require_once( __DIR__ . '/inc/LaureatsImportCSV.php');
 
 if(!ENV_DEV){
     require_once( __DIR__ . '/inc/acf.php');
@@ -40,7 +42,15 @@ function scripts_site(){
         wp_enqueue_script('googlemaps', 'https://maps.googleapis.com/maps/api/js?key=' . get_field('params_gmap_api_key', 'option') . '', array(), '', true);
         wp_enqueue_script( 'styles.gmaps', get_template_directory_uri() . '/js/styles.gmaps.js', array( 'jquery' ), '1.0', false );
         wp_enqueue_script( 'burger', get_template_directory_uri() . '/js/burger.js', array( 'jquery' ), '1.0', true );
+        wp_enqueue_script( 'laureates', get_template_directory_uri() . '/js/laureates.js', array( 'jquery' ), '1.0', true );
         wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0', true );
+
+        $dataToBePassedLaureates = array(
+            'wp_ajax_url' => admin_url( 'admin-ajax.php' ),
+            'wp_theme_url' => THEME_URL,
+            'ajxSearchLaureateNonce'    => wp_create_nonce( 'searchLaureateNonce' ),
+        );
+        wp_localize_script('laureates','laureatData', $dataToBePassedLaureates);
 
         $dataToBePassedMain = array(
             'wp_ajax_url' => admin_url( 'admin-ajax.php' ),
@@ -52,6 +62,8 @@ function scripts_site(){
             'ajxSearchAmbassadorNonce'    => wp_create_nonce( 'searchAmbassadorNonce' ),
         );
         wp_localize_script('script','boData', $dataToBePassedMain);
+
+
 
     }
 }

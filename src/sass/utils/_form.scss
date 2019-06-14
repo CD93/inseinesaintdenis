@@ -178,6 +178,10 @@ label {
             width: 50%;
         }
 
+        &.form-control--3col {
+            width: 33.333333333%;
+        }
+
         &:first-child {
             padding-left: 0;
         }
