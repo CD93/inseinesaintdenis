@@ -10,7 +10,7 @@
   "private": true,
   "dependencies": {
     "natives": "^1.1.6",
-    "node-sass": "^4.11.0"
+    "node-sass": "^7.0.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.3",
